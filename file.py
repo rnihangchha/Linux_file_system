@@ -3,6 +3,8 @@ import subprocess
 import stat
 import grp, pwd
 import shutil
+import sys
+
 word = r"""
    _,---.   .=-.-.             ,----.           ,-,--.                  ,-,--.  ,--.--------.    ,----.         ___   
   .-`.' ,  \ /==/_ / _.-.     ,-.--` , \        ,-.'-  _\ ,--.-.  .-,--.,-.'-  _\/==/,  -   , -\,-.--` , \ .-._ .'=.'\  
@@ -296,7 +298,7 @@ class FileSystemManager:
             try:
                 self.show_menu()
                 print("=============================================================================================")
-                options = input("Select options(1 -- 10): ")
+                options = sys.argv[1]
                 if options == '1':
                     self.create_and_write_to_file()
                 elif options == '2':
